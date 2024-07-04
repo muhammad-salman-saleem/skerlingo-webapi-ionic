@@ -1,0 +1,36 @@
+# docker run --rm --name site --publish '7000:7000' --volume "$(pwd)/src:/var/www/html" site
+
+version: '3'
+
+services:
+  php:
+    image: site
+    restart: unless-stopped
+    env_file:
+      - ./src/.env
+    depends_on:
+      - db
+    ports:
+      - 7000:7000
+    volumes:
+      - ./src:/var/www/html
+  db:
+    image: mariadb
+    env_file:
+      - ./src/.env
+    restart: unless-stopped
+    volumes: 
+      - db-data:/var/lib/mysql
+  dbmngr:
+    image: phpmyadmin/phpmyadmin
+    ports: 
+      - 8080:80
+    env_file:
+      - ./src/.env
+    volumes: 
+      - ./pma-config.user.inc.php:/etc/phpmyadmin/config.user.inc.php
+      # - dbmngr-config:/fin/pma/7at/data
+
+volumes:
+  db-data:
+  dbmngr-config:

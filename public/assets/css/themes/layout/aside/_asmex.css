@@ -1,0 +1,29 @@
+.aside-menu {
+  background-color: #004c68;
+}
+.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-heading, .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link {
+  background-color: #004c68;
+}
+.aside {
+  background-color: #004c68;
+}
+@media (min-width: 992px){
+  .brand {
+    background-color: #000000;
+  }
+}
+
+.brand .brand-logo img {
+  width: 50px !important;
+}
+
+.aside-menu .menu-nav > .menu-item.menu-item-open > .menu-heading, .aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link {
+  background-color: #000;
+}
+.aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading, .aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link {
+    background-color: #000;
+}
+
+#kt_aside_menu {
+  font-family: 'Inter';
+}
